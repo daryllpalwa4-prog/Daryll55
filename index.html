@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>...</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- SCREEN 1 -->
+<div id="screen1" class="screen">
+    <h2>wait...</h2>
+</div>
+
+<!-- SCREEN 2 -->
+<div id="screen2" class="screen">
+    <h2>i have something for you </h2>
+    <br>
+    <button onclick="next()">click here</button>
+</div>
+
+<!-- SCREEN 3 -->
+<div id="screen3" class="screen">
+    <h1>Happy Birthday Apple 🎂</h1>
+    <p>:))</p>
+    <p>- Daryll 😳</p>
+</div>
+
+<script>
+setTimeout(() => {
+    document.getElementById("screen1").style.display = "none";
+    document.getElementById("screen2").style.display = "block";
+}, 2000);
+
+function next() {
+    document.getElementById("screen2").style.display = "none";
+    document.getElementById("screen3").style.display = "block";
+    startFlowers();
+}
+
+function startFlowers() {
+    setInterval(() => {
+        let flower = document.createElement("div");
+        flower.classList.add("flower");
+        flower.innerHTML = ["🌸","🌹","💐","🌺"][Math.floor(Math.random()*4)];
+
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 7000);
+
+    }, 300);
+}
+</script>
+
+</body>
+</html>

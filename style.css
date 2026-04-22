@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial;
+    background: black;
+    color: white;
+    overflow: hidden;
+}
+
+.screen {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+#screen2, #screen3 {
+    display: none;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 🌸 flowers */
+.flower {
+    position: fixed;
+    top: -50px;
+    font-size: 60px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
